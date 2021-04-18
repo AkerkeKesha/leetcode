@@ -38,13 +38,16 @@ s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999]
 
 Clarifications:
+1. Is empty string assumed to ignore?
+
 
 Test Cases:
 
 
-Approach: move backwards on the string and map the char with the integer, for subtraction case, note that
-Time:
-Space:
+Approach: move backwards on the string and map the char with the integer, if the integer is less than or equal prev
+running total, then add new value to the result, otherwise subtract (would be either -1, -10, -100)
+Time: O(N)
+Space: O(1)
 
 """
 
