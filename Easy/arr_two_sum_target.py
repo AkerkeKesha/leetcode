@@ -25,13 +25,14 @@ Only one valid answer exists.
 
 2. Clarification:
 - if pair does not exist? Not possible, assume always 1 pair exists
-- numbers are all non-negative? Not really, negative is possible, see constraints
+- numbers are all non-negative? Not really, negative is possible and that is OK
+- how big is the num array?
 
 3. Test cases:
 - try mix of numbers, e.g  [-5, -4, 4], 0 return [1, 2]
 4. Approach1:
 Time: O(N)
-Space:
+Space: O(N) dict is used, i.e. hash map
 """
 from typing import List
 
