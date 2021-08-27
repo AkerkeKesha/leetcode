@@ -37,12 +37,9 @@ Space: O(N) to store dict, O(1) auxilary
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         result = 0
-        stone2jewels = {}
-        for j in jewels:
-            if j not in stone2jewels:
-                stone2jewels[j] = 1
+        jewelry = set(jewels)
         for s in stones:
-            result += 1 if s in stone2jewels else 0
+            result += 1 if s in jewelry else 0
         return result
 
 
