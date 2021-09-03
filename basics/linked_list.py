@@ -1,22 +1,4 @@
-from typing import List
-
-class Node:
-
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-class LinkedList:
-
-    def __init__(self):
-        self.head = None
-
-    def print_list(self):
-        temp = self.head
-        while temp:
-            print(temp.data)
-            temp = temp.next
+from typing import List, Optional
 
 
 class ListNode:
@@ -26,6 +8,12 @@ class ListNode:
 
     def __repr__(self):
         return "ListNode(val=" + str(self.val) + ", next={" + str(self.next) + "})"
+
+
+class LinkedList:
+
+    def __init__(self):
+        self.head = None
 
     def list2linked_list(self, arr: list):
         """
@@ -40,34 +28,36 @@ class ListNode:
             return None
         if len(arr) == 1:
             return ListNode(arr[0])
-        return ListNode(arr[0], next=ListNode().list2linked_list(arr[1:]))
+        return ListNode(arr[0], next=LinkedList().list2linked_list(arr[1:]))
 
+    def linked_list2list(self, head: ListNode) -> Optional[List[int]]:
+        result = []
+        if not head:
+            return None
+        while head:
+            result.append(head.val)
+            head = head.next
+        return result
 
-def linked_list2list(head) -> List[int]:
-    result = []
-    if not head:
+    def search(self, head: ListNode, x: int):
+        while head:
+            if head.val == x:
+                return head
+            head = head.next
         return None
-    while head:
-        result.append(head.val)
-        head = head.next
-    return result
 
 
 if __name__ == '__main__':
     linked_list = LinkedList()
-    linked_list.head = Node(1)
-    second = Node(2)
-    linked_list.head.next = second
-    third = Node(3)
-    second.next = third
-    linked_list.print_list()
-
-    ln = ListNode().list2linked_list([1, 0, 2])
+    ln = linked_list.list2linked_list([1, 0, 2])
     print(ln)
 
-    arr = linked_list2list(ln)
-    ln.linkedlist2_list(ln)
+    arr = linked_list.linked_list2list(ln)
     print(arr)
+
+    res = linked_list.search(ln, 0)
+    print(res)
+
 
 # object and class, how to initialize object
 
