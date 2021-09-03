@@ -31,7 +31,7 @@ Space: O(1)
 
 """
 from typing import Optional
-from basics.linked_list import ListNode, linked_list2list
+from basics.linked_list import ListNode, LinkedList
 
 
 class Solution:
@@ -56,8 +56,7 @@ if __name__ == '__main__':
         ([], [0], [0]),
     ]
     for l1, l2, output in tests:
-        ll1 = ListNode().list2linked_list(l1)
-        ll2 = ListNode().list2linked_list(l2)
+        ll1 = LinkedList().list2linked_list(l1)
+        ll2 = LinkedList().list2linked_list(l2)
         result = Solution().mergeTwoLists(ll1, ll2)
-
-        assert output == linked_list2list(result)
+        assert output == LinkedList().linked_list2list(result)
