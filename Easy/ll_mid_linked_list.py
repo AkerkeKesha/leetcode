@@ -36,7 +36,7 @@ Time: O(N) to traverse linked list
 Space: O(1) to store only vars
 
 """
-from basics.linked_list import ListNode
+from basics.linked_list import ListNode, LinkedList
 from typing import Optional
 from math import ceil
 
@@ -70,15 +70,15 @@ class Solution:
 
 if __name__ == '__main__':
     tests = [
-        ([1,2,3,4,5], [3,4,5]),
-        ([1,2,3,4,5,6], [4,5,6]),
+        ([1, 2, 3, 4, 5], [3, 4, 5]),
+        ([1, 2, 3, 4, 5, 6], [4, 5, 6]),
         ([1], [1]),
         (None, None),
         ([], None),
-        ([1,2,3,4,5,6,7,8], [5,6,7,8])
+        ([1, 2, 3, 4, 5, 6, 7, 8], [5, 6, 7, 8])
     ]
     for input_list, output_list in tests:
-        input_ll = ListNode().list2linked_list(input_list)
+        input_ll = LinkedList().list2linked_list(input_list)
         result = Solution().middle_node(input_ll)
-        expected_ll = ListNode().list2linked_list(output_list)
-        # assert result == expected_ll
+        arr = LinkedList().linked_list2list(result)
+        assert arr == output_list
