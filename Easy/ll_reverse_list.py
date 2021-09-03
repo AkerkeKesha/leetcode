@@ -30,7 +30,7 @@ Time:
 Space:
 
 """
-from basics.linked_list import ListNode, linked_list2list
+from basics.linked_list import ListNode, LinkedList
 from typing import Optional
 
 
@@ -64,15 +64,14 @@ if __name__ == '__main__':
         ([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]),
     ]
     for input_list, expected_list in tests:
-        ll = ListNode().list2linked_list(input_list)
+        ll = LinkedList().list2linked_list(input_list)
         ll_out = Solution().reverseList(ll)
-        res = linked_list2list(ll_out)
+        res = LinkedList().linked_list2list(ll_out)
         assert res == expected_list
     print("works iteratively")
     for input_list, expected_list in tests:
-        ll = ListNode().list2linked_list(input_list)
+        ll = LinkedList().list2linked_list(input_list)
         ll_out = Solution().reverse_list_recursive(ll)
-        res = linked_list2list(ll_out)
-        print(input_list)
+        res = LinkedList().linked_list2list(ll_out)
         assert res == expected_list
     print("works recursively")
