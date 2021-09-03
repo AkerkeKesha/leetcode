@@ -30,11 +30,12 @@ Time:
 Space:
 
 """
-from basics.linked_list import ListNode
+from basics.linked_list import ListNode, linked_list2list
 from typing import Optional
 
 
 class Solution:
+
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
             return head
@@ -47,15 +48,31 @@ class Solution:
             curr = tmp
         return prev
 
+    def reverse_list_recursive(self, head: Optional[ListNode], prev=None) -> Optional[ListNode]:
+        if not head:
+            return prev
+        temp = head.next
+        head.next = prev
+        return self.reverse_list_recursive(temp, head)  # reverse node excluding me
+
 
 if __name__ == '__main__':
     tests = [
-        ([], []),
-        ([1, 2], [2, 1]),
+        ([], None),
         (None, None),
+        ([1, 2], [2, 1]),
         ([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]),
     ]
     for input_list, expected_list in tests:
         ll = ListNode().list2linked_list(input_list)
         ll_out = Solution().reverseList(ll)
-        print(ll_out)
+        res = linked_list2list(ll_out)
+        assert res == expected_list
+    print("works iteratively")
+    for input_list, expected_list in tests:
+        ll = ListNode().list2linked_list(input_list)
+        ll_out = Solution().reverse_list_recursive(ll)
+        res = linked_list2list(ll_out)
+        print(input_list)
+        assert res == expected_list
+    print("works recursively")
