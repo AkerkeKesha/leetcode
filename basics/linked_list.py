@@ -1,3 +1,4 @@
+from typing import List
 
 class Node:
 
@@ -33,11 +34,23 @@ class ListNode:
         :param arr: some list of values
         :return: None or ListNode
         """
+        if not arr:
+            return None
         if len(arr) < 1:
             return None
         if len(arr) == 1:
             return ListNode(arr[0])
         return ListNode(arr[0], next=ListNode().list2linked_list(arr[1:]))
+
+
+def linked_list2list(head) -> List[int]:
+    result = []
+    if not head:
+        return None
+    while head:
+        result.append(head.val)
+        head = head.next
+    return result
 
 
 if __name__ == '__main__':
@@ -52,4 +65,9 @@ if __name__ == '__main__':
     ln = ListNode().list2linked_list([1, 0, 2])
     print(ln)
 
+    arr = linked_list2list(ln)
+    ln.linkedlist2_list(ln)
+    print(arr)
+
+# object and class, how to initialize object
 
