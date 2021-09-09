@@ -52,7 +52,7 @@ class Solution:
 if __name__ == '__main__':
     tests = [
         ([1, 2, 4], [1, 3, 4], [1, 1, 2, 3, 4, 4]),
-        ([], [], None),
+        ([], [], []),
         ([], [0], [0]),
     ]
     for l1, l2, output in tests:
