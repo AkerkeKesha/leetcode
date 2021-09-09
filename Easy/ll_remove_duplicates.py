@@ -49,7 +49,7 @@ if __name__ == '__main__':
     tests = [
         ([1, 1, 2], [1, 2]),
         ([1, 1, 2, 3, 3], [1, 2, 3]),
-        ([], None),
+        ([], []),
         ([1], [1])
     ]
     for input_list, output_list in tests:
