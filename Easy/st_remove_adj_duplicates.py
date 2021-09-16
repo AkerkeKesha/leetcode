@@ -23,8 +23,11 @@ s consists of lowercase English letters.
 3. Edge Cases:
 - empty string
 
-4. Approach1: go through string and push char into stack, then when exploring next char check against top of stack
-pop stack if matches.
+4. Approach1: go through string and push char into stack if it does not match the top of stack. Else pop the stack.
+Return this stack as the result
+Time: O(N) traverse string
+Space: O(N) to store the list
+
 """
 from typing import List
 
