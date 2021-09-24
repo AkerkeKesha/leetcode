@@ -31,6 +31,7 @@ Space: O(N) to store the dict
 
 """
 from typing import List
+import collections
 
 
 class Solution:
@@ -44,18 +45,21 @@ class Solution:
                 element_counter[num] = 0
         return max(element_counter, key=element_counter.get)
 
+    def majority_element(self, nums) -> int:
+        counts = collections.Counter(nums)
+        return max(counts.keys(), key=counts.get)
+
 
 if __name__ == '__main__':
     tests = [
         ([-10], -10),
-        ([3,2,3], 3),
-        # size = 3, freq = 2
-        ([2,2,1,1,1,2,2], 2),
-        # size = 7, freq = 4
+        ([3, 2, 3], 3),
+        ([2, 2, 1, 1, 1, 2, 2], 2),
         ([2, 2, 1, 1, 1, 2, 2, 1, 1], 1),
-        # size = 9, freq = 5
     ]
     for nums, expected in tests:
         result = Solution().majorityElement(nums)
+        result2 = Solution().majority_element(nums)
         assert expected == result
+        assert result2 == expected
 
