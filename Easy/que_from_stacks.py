@@ -68,12 +68,14 @@ class MyQueue:
         """
         Removes the element from the front of the queue and returns it.
         :return:
+        Time: O(1) Space: O(1)
         """
         return self.stack1.pop()
 
     def peek(self) -> int:
         """
         :return: Returns the element at the front of the queue.
+        Time: O(1) Space: O(1)
         """
         return self.stack1[-1]
 
