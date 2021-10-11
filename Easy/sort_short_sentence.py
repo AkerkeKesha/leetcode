@@ -36,15 +36,8 @@ class Solution:
         # Divide the sentence into the words as an array of strings
         words = s.split()
         # Sort the words by removing the last character from each word and sorting according to it
-        word2val = []
-        for word in words:
-            pair = word[:-1], word[-1]
-            word2val.append(pair)
-        sorted_words = sorted(word2val, key=lambda x: x[1])
-        result = []
-        for word, _ in sorted_words:
-            result.append(word)
-        return " ".join(result)
+        sorted_words = sorted(words, key=lambda x: x[-1])
+        return " ".join([word[:-1] for word in sorted_words])
 
 
 if __name__ == '__main__':
