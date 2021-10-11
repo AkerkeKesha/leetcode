@@ -30,7 +30,8 @@ sum(pieces[i].length) == arr.length
 The integers in arr are distinct.
 The integers in pieces are distinct (i.e., If we flatten pieces in a 1D array, all the integers in this array are distinct).
 
-Approach1: Create a map key, value -> first element
+Approach1: Unwrap arrays in pieces 2D array. Create a map key, value -> first val in pieces array, whole list.
+For each value in nums, concatenate pieces array into one, using our map
 Time: O(N) to traverse nums and create a map
 Space: O(N) to store the map
 
