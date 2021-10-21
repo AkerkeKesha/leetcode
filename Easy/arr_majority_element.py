@@ -39,10 +39,7 @@ class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         element_counter = {}
         for num in nums:
-            if num in element_counter:
-                element_counter[num] += 1
-            else:
-                element_counter[num] = 0
+            element_counter[num] = element_counter.get(num, 0) + 1
         return max(element_counter, key=element_counter.get)
 
     def majority_element(self, nums) -> int:
