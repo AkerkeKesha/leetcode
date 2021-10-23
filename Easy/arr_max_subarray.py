@@ -40,14 +40,17 @@ class Solution:
         return 0
 
     def max_subarray_sw(self, nums: List[int]) -> int:
+        """
+        Kadane algorithm
+        :param nums: list of ints (can contain negative)
+        :return: the max sub array of given list
+        """
         cur_sum = 0
-        max_sub_array = -10000
+        best_sum = -10000
         for num in nums:
-            if cur_sum < 0:
-                cur_sum = 0
-            cur_sum += num
-            max_sub_array = max(max_sub_array, cur_sum)
-        return max_sub_array
+            cur_sum = max(0, cur_sum + num)
+            best_sum = max(best_sum, cur_sum)
+        return best_sum
 
 
 if __name__ == '__main__':
