@@ -24,7 +24,7 @@ def binary_search(array: List[int], left: int, right: int, x: int) -> int:
     :return: index of x in arr if present, else -1
     """
     if right >= left:
-        mid = left + (right - left) // 2  # to avoid overflow error
+        mid = (left + right) // 2
         if x == array[mid]:
             return mid
         elif x < array[mid]:
@@ -47,7 +47,7 @@ def binary_search_iter(array: List[int], x: int) -> int:
     right = len(array) - 1
 
     while left <= right:
-        mid = left + (right - left) // 2
+        mid = (left + right) // 2
         if array[mid] == x:
             return mid
         elif x < array[mid]:
