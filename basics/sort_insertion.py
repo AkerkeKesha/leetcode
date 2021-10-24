@@ -24,7 +24,7 @@ def insert_sort(array: List[int]) -> None:
 
 
 if __name__ == '__main__':
-    lst = [64, 25, 12, 25, 22, 11, 6]
+    lst = [34, 23, 1, 24, 75, 33, 54, 8]
     print(lst)
     insert_sort(lst)
     print(lst)
