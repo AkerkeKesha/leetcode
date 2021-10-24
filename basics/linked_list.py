@@ -15,7 +15,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def list2linked_list(self, arr: list):
+    def from_list(self, arr: list):
         """
         recursive function to create linked list from a list, where pointers follow the order in input list
 
@@ -28,12 +28,12 @@ class LinkedList:
             return None
         if len(arr) == 1:
             return ListNode(arr[0])
-        return ListNode(arr[0], next=LinkedList().list2linked_list(arr[1:]))
+        return ListNode(arr[0], next=LinkedList().from_list(arr[1:]))
 
-    def linked_list2list(self, head: ListNode) -> Optional[List[int]]:
+    def to_list(self, head: ListNode) -> Optional[List[int]]:
         result = []
         if not head:
-            return None
+            return result
         while head:
             result.append(head.val)
             head = head.next
@@ -49,15 +49,12 @@ class LinkedList:
 
 if __name__ == '__main__':
     linked_list = LinkedList()
-    ln = linked_list.list2linked_list([1, 0, 2])
+    ln = linked_list.from_list([1, 0, 2])
     print(ln)
 
-    arr = linked_list.linked_list2list(ln)
+    arr = linked_list.to_list(ln)
     print(arr)
 
     res = linked_list.search(ln, 0)
     print(res)
-
-
-# object and class, how to initialize object
 
