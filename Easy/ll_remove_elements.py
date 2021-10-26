@@ -27,6 +27,9 @@ The number of nodes in the list is in the range [0, 104].
 4. Approach1: Traverse list and compare values, if equals than set next listnode pointer
 Time: O(N)
 Space: O(1)
+Approach2: Recursively
+Time:
+Space:
 """
 from basics.linked_list import ListNode, LinkedList
 from typing import Optional
@@ -45,6 +48,15 @@ class Solution:
                 cur = cur.next
         return dummy_head.next
 
+    def remove_elements(self, head, val):
+        if not head:
+            return None
+        if head.val == val:
+            head = self.removeElements(head.next, val)
+        else:
+            head.next = self.removeElements(head.next, val)
+        return head
+
 
 if __name__ == '__main__':
     tests = [
@@ -52,9 +64,18 @@ if __name__ == '__main__':
         ([], 1, []),
         ([7, 7, 7, 7], 7, []),
     ]
+
     for input_list, val, expected_list in tests:
-        input_ll = LinkedList().list2linked_list(input_list)
+        input_ll = LinkedList().from_list(input_list)
         result = Solution().removeElements(input_ll, val)
-        output_ll = LinkedList().linked_list2list(result)
+        output_ll = LinkedList().to_list(result)
         assert expected_list == output_ll
+    print(" -- iterative approach ended successfully ---")
+    for input_list, val, expected_list in tests:
+        input_ll = LinkedList().from_list(input_list)
+        result = Solution().remove_elements(input_ll, val)
+        output_ll = LinkedList().to_list(result)
+        assert expected_list == output_ll
+    print(" -- recursive approach ended successfully ---")
+
 
