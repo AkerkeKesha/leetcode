@@ -29,6 +29,10 @@ then curr will point to the smallest values between two input linked lists
 Time: O(N)
 Space: O(1)
 
+Approach2:
+TIme:
+Space:
+
 """
 from typing import Optional
 from basics.linked_list import ListNode, LinkedList
@@ -48,6 +52,19 @@ class Solution:
         curr.next = l1 or l2
         return dummy_head.next
 
+    def merge_two_lists(self, l1, l2):
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+        if l1.val < l2.val:
+            node = ListNode(l1.val)
+            node.next = self.merge_two_lists(l1.next, l2)
+        else:
+            node = ListNode(l2.val)
+            node.next = self.merge_two_lists(l1, l2.next)
+        return node
+
 
 if __name__ == '__main__':
     tests = [
@@ -56,7 +73,14 @@ if __name__ == '__main__':
         ([], [0], [0]),
     ]
     for l1, l2, output in tests:
-        ll1 = LinkedList().list2linked_list(l1)
-        ll2 = LinkedList().list2linked_list(l2)
+        ll1 = LinkedList().from_list(l1)
+        ll2 = LinkedList().from_list(l2)
         result = Solution().mergeTwoLists(ll1, ll2)
-        assert output == LinkedList().linked_list2list(result)
+        assert output == LinkedList().to_list(result)
+    print("--- iterative approach ended successfully ---")
+    for l1, l2, output in tests:
+        ll1 = LinkedList().from_list(l1)
+        ll2 = LinkedList().from_list(l2)
+        rec = Solution().merge_two_lists(ll1, ll2)
+        assert output == LinkedList().to_list(rec)
+    print("--- recursive approach ended successfully ---")
