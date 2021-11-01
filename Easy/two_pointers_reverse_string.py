@@ -19,15 +19,17 @@ Time: O(n)
 Space: O(1)
 
 """
+from abc import ABC
 from typing import List
 
 
-class Solution:
+class Solution(ABC):
+    def reverseString(self, s: List[str]) -> List[str]:
+        pass
 
-    def __init__(self):
-        self.string = None
 
-    def reverseString(self, s: List[str]) -> None:
+class IterativeSolution(Solution):
+    def reverseString(self, s: List[str]) -> List[str]:
         """
         Do not return anything, modify s in-place instead.
         """
@@ -36,15 +38,33 @@ class Solution:
             s[head], s[tail] = s[tail], s[head]
             head += 1
             tail -= 1
-        self.string = s
+        return s
+
+
+class RecursiveSolution(Solution):
+    def reverseString(self, s: List[str]) -> List[str]:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        return self._reverse_recursively(s=s, start=0, end=len(s) - 1)
+
+    def _reverse_recursively(self, s: List[str], start, end) -> List[str]:
+        if start >= end:
+            return s
+        s[start], s[end] = s[end], s[start]
+        return self._reverse_recursively(s, start + 1, end - 1)
+
+
+def test(solution: Solution, input_value: List[str], expected: List[str]):
+    actual = solution.reverseString(input_value)
+    assert (actual == expected)
 
 
 if __name__ == '__main__':
     tests = [
-        (["h","e","l","l","o"], ["o","l","l","e","h"]),
-        (["H","a","n","n","a","h"], ["h","a","n","n","a","H"]),
+        (["h", "e", "l", "l", "o"], ["o", "l", "l", "e", "h"]),
+        (["H", "a", "n", "n", "a", "h"], ["h", "a", "n", "n", "a", "H"]),
     ]
-    for input, reversed_str in tests:
-        solution = Solution()
-        solution.reverseString(input)
-        assert(solution.string == reversed_str)
+    for input_value, expected in tests:
+        test(solution=IterativeSolution(), input_value=input_value.copy(), expected=expected)
+        test(solution=RecursiveSolution(), input_value=input_value.copy(), expected=expected)
