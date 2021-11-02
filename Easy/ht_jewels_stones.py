@@ -29,7 +29,7 @@ All the characters of jewels are unique.
 
 4. Approach1: Create a dict based on counters
 Time: O(N) to traverse strings
-Space: O(N) to store dict, O(1) auxilary
+Space: O(N) to store dict, O(1) auxiliary space
 
 """
 
