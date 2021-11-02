@@ -94,7 +94,4 @@ if __name__ == "__main__":
     ]
     for input, expected_result in test_cases:
         result = Solution().romanToInt(input)
-        if result == expected_result:
-            continue
-        else:
-            print(f"test case {expected_result}!= {result} fails")
+        assert result == expected_result

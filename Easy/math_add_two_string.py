@@ -1,6 +1,5 @@
 """
 Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
-
 You must solve the problem without using any built-in library for handling large integers (such as BigInteger).
 You must also not convert the inputs to integers directly.
 Example 1:
@@ -23,16 +22,17 @@ Constraints:
 num1 and num2 consist of only digits.
 num1 and num2 don't have any leading zeros except for the zero itself.
 
-Clarifications:
-1. emptry string will result in empty string?
+2. Clarifications:
+ - emptry string will result in empty string?
 
-Test Cases: edge cases
+3. Test Cases:
+
         "1" + "9" = "10" there is still carry
         "0" + "0" = "0"
 
-Approach 1: traverse through string reversely, add digits and keep track of carry. Take care when you are done with one
+4. Approach 1: traverse through string reversely, add digits and keep track of carry. Take care when you are done with one
 number, don't forget to add 0. If both nums have same length and carry "overflows" dont forget to increase the length!
-Time:
+Time: O(n)
 Space:
 
 """
