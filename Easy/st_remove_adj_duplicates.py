@@ -34,7 +34,7 @@ from typing import List
 
 class Solution:
     def top(self, stack: List[str]) -> str:
-        return stack[len(stack) - 1] if len(stack) > 0 else ""
+        return stack[len(stack) - 1] if len(stack) > 0 else ''
 
     def removeDuplicates(self, s: str) -> str:
         stack = []
