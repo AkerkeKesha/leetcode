@@ -24,9 +24,11 @@ Constraints:
 
 2. Clarifications
 3. Edge Cases
-4. Approach1:
-Time:
-Space:
+
+4. Approach1: Creater counter dictionary. Sort this dict first by frequences, then by keys in reverse order.
+Retun array for each key extended by the times of freq
+Time: O(N * logN) to iterate through nums and sort pairs
+Space: O(N) aux space to store map and result
 
 """
 from typing import List
