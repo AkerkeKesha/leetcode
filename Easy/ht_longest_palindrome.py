@@ -34,6 +34,7 @@ Space: O(1) to store count, O(N) for the map
 
 """
 
+
 class Solution:
 
     def longestPalindrome(self, s: str) -> int:
@@ -50,7 +51,7 @@ class Solution:
 
 if __name__ == '__main__':
     tests = [
-        ("abccccddd", 7),  # dccbccd is one example
+        ("abccccddd", 7),  # cis one example
         ("abccccdd", 7),  # dccaccd is one example
         ("abccccddddd", 9), #  ddccaccdd
         ("bb", 2),
