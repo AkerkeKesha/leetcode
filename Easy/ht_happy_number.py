@@ -42,7 +42,6 @@ Space: O(logn) numbers in the Hash set will be stored
 class Solution:
 
     def isHappy(self, n: int) -> bool:
-
         # pick the digits one by one
         def get_next(n):
             total_sum = 0
@@ -50,7 +49,6 @@ class Solution:
                 n, digit = divmod(n, 10)  # same as (x // y, x % y)
                 total_sum += digit ** 2
             return total_sum
-
         seen = set()
         while n not in seen:
             seen.add(n)
