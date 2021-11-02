@@ -30,7 +30,9 @@ Only one valid answer exists.
 
 3. Test cases:
 - try mix of numbers, e.g  [-5, -4, 4], 0 return [1, 2]
-4. Approach1:
+
+4. Approach1: Create a hash map of current values' complement. If complement was seen, then target is reached,
+can return complement and current index. Otherwise, add to hashmap for further steps
 Time: O(N)
 Space: O(N) dict is used, i.e. hash map
 """
