@@ -24,8 +24,8 @@ There will be at least one word in s.
 2. Clarifications
 3. Edge cases
 4. Approach1:
-Time:
-Space:
+Time: O(N) to iterate the sentence
+Space: O(1)
 
 """
 
