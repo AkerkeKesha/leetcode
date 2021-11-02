@@ -15,7 +15,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def from_list(self, arr: list):
+    def from_list(self, arr: list) -> Optional[ListNode]:
         """
         recursive function to create linked list from a list, where pointers follow the order in input list
 
