@@ -47,8 +47,6 @@ Space
 
 
 """
-from typing import List
-
 BACKSPACE = '#'
 
 
