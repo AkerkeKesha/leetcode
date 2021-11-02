@@ -56,6 +56,7 @@ from typing import Dict, List
 
 
 class Solution:
+
     def thirdMax(self, nums: List[int]) -> int:
         """
 
