@@ -28,10 +28,9 @@ fill in zeros upto original len is reached
 Time: O(N) to traverse and append
 Space: O(N) to store result array
 
-Approach 2: A two-pointer approach could be helpful here.
-The idea would be to have one pointer for iterating the array
+Approach 2: A two-pointer approach could be helpful here. The idea would be to have one pointer for iterating the array
 and another pointer that just works on the non-zero elements of the array.
-Time:
+Time: O(N) to iterate over list
 Space: O(1) in place modification of input
 
 
