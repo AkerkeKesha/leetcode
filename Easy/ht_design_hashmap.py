@@ -42,7 +42,6 @@ class MyHashMap:
         """
         self.hash_map[key] = value  # if key in self.hash_map, update value
 
-
     def get(self, key: int) -> int:
         """
         Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
