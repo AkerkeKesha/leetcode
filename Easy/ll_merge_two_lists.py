@@ -30,7 +30,7 @@ Time: O(N)
 Space: O(1)
 
 Approach2:
-TIme:
+Time:
 Space:
 
 """

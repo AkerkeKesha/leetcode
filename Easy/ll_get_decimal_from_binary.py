@@ -81,12 +81,12 @@ if __name__ == '__main__':
         ([0,0], 0),
     ]
     for input_list, expected in tests:
-        ln = LinkedList().list2linked_list(input_list)
+        ln = LinkedList().from_list(input_list)
         ans = Solution().getDecimalValue(ln)
         assert ans == expected
     print("Approach 1 worked")
     for input_list, expected in tests:
-        ln = LinkedList().list2linked_list(input_list)
+        ln = LinkedList().from_list(input_list)
         ans = Solution().get_decimal_value_bitwise(ln)
         assert ans == expected
     print("Approach 2 worked")

@@ -53,9 +53,9 @@ if __name__ == '__main__':
         ([1], [1])
     ]
     for input_list, output_list in tests:
-        input_ll = LinkedList().list2linked_list(input_list)
+        input_ll = LinkedList().from_list(input_list)
         result = Solution().deleteDuplicates(input_ll)
-        arr = LinkedList().linked_list2list(result)
+        arr = LinkedList().to_list(result)
         assert arr == output_list
 
 

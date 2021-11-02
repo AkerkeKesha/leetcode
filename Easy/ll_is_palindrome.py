@@ -62,6 +62,6 @@ if __name__ == '__main__':
         ([1, 2], False),
     ]
     for input_list, expected_val in tests:
-        input_ll = LinkedList().list2linked_list(input_list)
+        input_ll = LinkedList().from_list(input_list)
         result = Solution().isPalindrome(input_ll)
         assert result == expected_val

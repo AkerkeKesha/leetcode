@@ -64,9 +64,9 @@ if __name__ == '__main__':
         # ([2,6,4], [1,5], []),
     ]
     for list_a, list_b, inter_list in tests:
-        ll_a = LinkedList().list2linked_list(list_a)
-        ll_b = LinkedList().list2linked_list(list_b)
+        ll_a = LinkedList().from_list(list_a)
+        ll_b = LinkedList().from_list(list_b)
         intersection_head = Solution().getIntersectionNode(ll_a, ll_b)
         print(intersection_head)
-        result_list = LinkedList().linked_list2list(intersection_head)
+        result_list = LinkedList().to_list(intersection_head)
         # assert result_list == inter_list

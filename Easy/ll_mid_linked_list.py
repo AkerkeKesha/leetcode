@@ -78,7 +78,7 @@ if __name__ == '__main__':
         ([1, 2, 3, 4, 5, 6, 7, 8], [5, 6, 7, 8])
     ]
     for input_list, output_list in tests:
-        input_ll = LinkedList().list2linked_list(input_list)
+        input_ll = LinkedList().from_list(input_list)
         result = Solution().middle_node(input_ll)
-        arr = LinkedList().linked_list2list(result)
+        arr = LinkedList().to_list(result)
         assert arr == output_list

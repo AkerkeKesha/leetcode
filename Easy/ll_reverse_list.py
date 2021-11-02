@@ -64,14 +64,14 @@ if __name__ == '__main__':
         ([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]),
     ]
     for input_list, expected_list in tests:
-        ll = LinkedList().list2linked_list(input_list)
+        ll = LinkedList().from_list(input_list)
         ll_out = Solution().reverseList(ll)
-        res = LinkedList().linked_list2list(ll_out)
+        res = LinkedList().to_list(ll_out)
         assert res == expected_list
     print("works iteratively")
     for input_list, expected_list in tests:
-        ll = LinkedList().list2linked_list(input_list)
+        ll = LinkedList().from_list(input_list)
         ll_out = Solution().reverse_list_recursive(ll)
-        res = LinkedList().linked_list2list(ll_out)
+        res = LinkedList().to_list(ll_out)
         assert res == expected_list
     print("works recursively")

@@ -71,10 +71,10 @@ if __name__ == '__main__':
     ]
     for input_list, node_val, output_list in tests:
         ll = LinkedList()
-        ln = ll.list2linked_list(input_list)
+        ln = ll.from_list(input_list)
         sl = Solution(ln)
         node = ll.search(ln, node_val)
         sl.deleteNode(node)
-        res = ll.linked_list2list(sl.ListNode)
+        res = ll.to_list(sl.ListNode)
         assert res == output_list
 
