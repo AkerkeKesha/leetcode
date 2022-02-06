@@ -39,7 +39,6 @@ class Solution:
             if flowerbed[i] == 0 and (i == 0 or flowerbed[i-1] == 0) and (i == len(flowerbed) - 1 or flowerbed[i+1] == 0):
                 flowerbed[i] = 1
                 count_flowers += 1
-            i += 1
         return count_flowers >= n
 
 
@@ -50,6 +49,7 @@ if __name__ == '__main__':
         ([0, 0, 0], 1, True),
         ([1, 0, 0], 1, True),
         ([0, 1, 0], 1, False),
+        ([1, 0, 0, 0, 1, 0, 0], 2, True)
     ]
     for flowerbed, n, expected in tests:
         answer = Solution().canPlaceFlowers(flowerbed, n)
