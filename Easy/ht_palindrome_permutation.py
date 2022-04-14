@@ -11,7 +11,10 @@ Consider the palindromes of odd vs even length. What difference do you notice?
 Count the frequency of each character. If each character occurs even number of times,
 then it must be a palindrome. How about character which occurs odd number of times?
 
-2. Clarifications
+2. Clarifications:
+- Can I assume non-empty strings are passed as input?
+- Can we assume the string is lower-case English letters?
+
 3. Edge cases
 4. Approach1:
 Time: O(N) to iterate string
