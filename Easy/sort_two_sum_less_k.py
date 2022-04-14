@@ -29,7 +29,7 @@ Note:
 If two pairs pointed by pointers are less than or equal to target, then move the tail pointer towards middle
 Otherwise advance the head pointer
 Time: O(NlogN) to sort
-Space: O(1) aux space to store pointers, max_sum.
+Space: O(NlogN) or O(N) depending on the type of sorting algorithm
 
 """
 from typing import List
@@ -37,6 +37,7 @@ from typing import List
 
 class Solution:
     def twoSumLessThanK(self, nums: List[int], k: int) -> int:
+        # N logN
         nums.sort()
         # two pointers
         head = 0
