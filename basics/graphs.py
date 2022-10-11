@@ -43,10 +43,11 @@ class UnionFind:
 
     def __init__(self, size: int) -> None:
         self.root = [i for i in range(size)]
+        self.rank = [1] * size
 
     def find(self, x) -> int:
         """
-        O(N) to make changes and root index
+        O(logN) to make changes and root index
         :param x:
         :return:
         """
@@ -57,7 +58,7 @@ class UnionFind:
     def union(self, x: int, y: int) -> None:
         """
         Make the root of y be the root of x
-        O(N) to make changes
+        O(logN) to make changes
         :param x:
         :param y:
         :return:
@@ -65,11 +66,17 @@ class UnionFind:
         rootX = self.find(x)
         rootY = self.find(y)
         if rootX != rootY:
-            self.root[rootY] = rootX
+            if self.rank[rootX] > self.rank[rootY]:
+                self.root[rootY] = rootX
+            elif self.rank[rootY] > self.rank[rootX]:
+                self.root[rootX] = rootY
+            else:
+                self.root[rootY] = rootX
+                self.rank[rootX] += 1
 
     def connected(self, x: int, y: int) -> bool:
         """
-        O(N) to check whether root vertices are equal
+        O(logN) to check whether root vertices are equal
         :param x:
         :param y:
         :return:
