@@ -51,8 +51,10 @@ class UnionFind:
         :param x:
         :return:
         """
-        while x != self.root[x]:
-            x = self.root[x]
+
+        if x == self.root[x]:
+            return x
+        self.root[x] = self.find(self.root[x])
         return self.root[x]
 
     def union(self, x: int, y: int) -> None:
